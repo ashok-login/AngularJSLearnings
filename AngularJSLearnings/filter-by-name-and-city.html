@@ -1,0 +1,24 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/MyScripts/filter-by-name-and-city.js"></script>
+</head>
+<body ng-controller="myController">
+    <input type="text" placeholder="Search name and city" ng-model="searchText" />
+    <table border="1">
+        <tr>
+            <th>Name</th>
+            <th>Date of birth</th>
+            <th>City</th>
+        </tr>
+        <tr ng-repeat="emp in employees | filter: searchFunction">
+            <td>{{ emp.name | uppercase }}</td>
+            <td>{{ emp.dob | date:"dd MMM, yyyy" }}</td>
+            <td>{{ emp.city | lowercase }}</td>
+        </tr>
+    </table>
+</body>
+</html>

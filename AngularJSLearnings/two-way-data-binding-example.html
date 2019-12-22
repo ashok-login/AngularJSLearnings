@@ -1,0 +1,41 @@
+﻿<!DOCTYPE html>
+<html ng-app="myModule">
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/MyScripts/two-way-data-binding-example.js"></script>
+</head>
+<body ng-controller="myController">
+    <table>
+        <tr>
+            <td>First name:</td>
+            <td><input type="text" ng-model="emp.firstName" /> </td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td><input type="text"  ng-model="emp.lastName" /></td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td><input type="text" ng-model="emp.gender" /></td>
+        </tr>
+    </table>
+    <br />
+    <br />
+    <table>
+        <tr>
+            <td>First name:</td>
+            <td>{{ emp.firstName }}</td>
+        </tr>
+        <tr>
+            <td>Last name:</td>
+            <td>{{ emp.lastName }}</td>
+        </tr>
+        <tr>
+            <td>Gender:</td>
+            <td>{{ emp.gender }}</td>
+        </tr>
+    </table>
+</body>
+</html>

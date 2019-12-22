@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title></title>
+    <script src="Scripts/angular.js"></script>
+    <script src="Scripts/MyScripts/angular-sorting.js"></script>
+</head>
+<body ng-app="myModule">
+    <div ng-controller="myController">
+        Order by:
+        <select ng-model="sortElement">
+            <option value="name">Name</option>
+            <option value="dob">Date of birth</option>
+            <option value="gender">Gender</option>
+            <option value="+salary">Salary Reverse Order</option>
+        </select>
+        <table border="1">
+            <tr>
+                <th>Name</th>
+                <th>Date of birth</th>
+                <th>Gender</th>
+                <th>Salary</th>
+            </tr>
+            <tr ng-repeat="emp in employees | orderBy:sortElement">
+                <td>{{ emp.name | uppercase}}</td>
+                <td>{{ emp.dob | date:"dd MM,yyyy" }}</td>
+                <td>{{ emp.gender | lowercase }}</td>
+                <td>{{ emp.salary | currency:"₹" }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
